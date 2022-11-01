@@ -126,3 +126,43 @@ db.createCollection('mensajes')
 						}
 					]
 				})
+
+		iii)
+			db.productos.find({
+				price: {$gt: 3000}
+			})
+
+		iv)
+			db.productos.find({}, {"title":1, "_id":0}).sort({price: 1}).skip(2).limit(1)
+
+	C)
+		db.productos.updateMany({}, {$set: {'stock': 100}})
+
+	D)
+		db.productos.updateMany({"price": {$gt: 4000}}, {$set: {stock: 0}})
+
+	E) 
+		db.productos.deleteMany({"price": {$lt: 1000}})
+
+
+6) 
+	use admin
+	db.createUser(
+		{
+			user: "pepe",
+			pwd: "asd456",
+			roles: [
+				{role: "read", db: "ecommerce"}
+			]
+		}
+	)
+
+	sudo mongod --dbpath '/Users/maurocigliuti1/OneDrive/CODE/Coderhouse/back-end/desafios/desafio-8-db-mongo/db' --auth
+
+	mongosh -u pepe -p asd456
+	db.productos.find()
+
+	db.productos.insertOne({title: 'prohibido'})
+		// MongoServerError: not authorized on ecommerce to execute command { delete: "productos", deletes: [ { q: { title: "hola" }, limit: 1 } ], ordered: true, lsid: { id: UUID("6aa3e26c-157b-4c3a-bb68-8d7d2187577e") }, $db: "ecommerce" }
+
+
