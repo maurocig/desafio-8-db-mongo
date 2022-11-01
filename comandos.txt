@@ -1,0 +1,128 @@
+use ecommerce
+db.createCollection('productos')
+db.createCollection('mensajes')
+
+1), 2)
+	db.mensajes.insertMany([
+		{
+			"email": "juanjo@gmail.com",
+			"message": "Hola!"
+		},
+		{
+			"email": "pedro@gmail.com",
+			"message": "Hola!!"
+		},
+		{
+			"email": "diego@gmail.com",
+			"message": "como andan!"
+		},
+		{
+			"email": "pedro@gmail.com",
+			"message": "re bien ac√°"
+		},
+		{
+			"email": "nancy@gmail.com",
+			"message": "que dice dieguito"
+		},
+		{
+			"email": "diego@gmail.com",
+			"message": "todo bien por suerte"
+		},
+		{
+			"email": "diego@gmail.com",
+			"message": "a;lsdkfjsa"
+		},
+		{
+			"email": "pablo@gmail.com",
+			"message": "de que me perdi"
+		},
+		{
+			"email": "santiago@gmail.com",
+			"message": "buenass"
+		},
+		{
+			"email": "juanjo@gmail.com",
+			"message": "Hola a todos!"
+		}
+	])
+
+	db.productos.insertMany([
+		{
+			"title": "Mouse",
+			"price": 1500,
+			"thumbnail": "https://st.depositphotos.com/1004915/2035/i/600/depositphotos_20353239-stock-photo-computer-mouse.jpg"
+		},
+		{
+			"title": "Teclado",
+			"price": 1800,
+			"thumbnail": "https://www.muycomputer.com/wp-content/uploads/2019/10/Microsoft_kyb.jpg"
+		},
+		{
+			"title": "Clip",
+			"price": 100,
+			"thumbnail": "https://www.distritooficina.com/wp-content/uploads/2019/03/clip1.jpg"
+		},
+		{
+			"title": "Mousepad",
+			"price": 350,
+			"thumbnail": "https://resource.logitechg.com/d_transparent.gif/content/dam/products/gaming/mice/g640-cloth-gaming-mouse-pad/g640-large-cloth-gaming-mouse-pad13.png"
+		},
+		{
+			"title": "Championes",
+			"price": 3300,
+			"thumbnail": "https://resource.logitechg.com/d_transparent.gif/content/dam/products/gaming/mice/g640-cloth-gaming-mouse-pad/g640-large-cloth-gaming-mouse-pad13.png"
+		},
+		{
+			"title": "Magic Trackpad",
+			"price": 1690,
+			"thumbnail": "https://http2.mlstatic.com/D_NQ_NP_2X_673818-MLA46250587136_062021-F.webp"
+		},
+		{
+			"title": "Monitor Dell 32\"",
+			"price": 4300,
+			"thumbnail": "http://imagenes.com/imagen-monitor.jpg"
+		},
+		{
+			"title": "Monitor Dell 27\"",
+			"price": 4800,
+			"thumbnail": "http://imagenes.com/imagen-monitor.jpg"
+		},
+		{
+			"title": "Juego Call of Duty",
+			"price": 2500,
+			"thumbnail": "https://cdn.europosters.eu/image/750/posters/call-of-duty-black-ops-3-cover-i32831.jpg"
+		},
+		{
+			"title": "Juego GTA Vice City",
+			"price": 2000,
+			"thumbnail": "https://upload.wikimedia.org/wikipedia/en/c/ce/Vice-city-cover.jpg"
+		}
+	])
+
+3)
+	db.productos.find()
+	db.mensajes.find()
+
+4)	
+	db.productos.coundDocuments()
+	db.mensajes.coundDocuments()
+	
+5) 
+	A)
+		db.productos.insertOne({ "title": "Juego GTA San Andreas", "price": 2100, "thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/GTASABOX.jpg/220px-GTASABOX.jpg" })
+
+	B)
+		i)
+			db.productos.find({price: {$lt: 1000}})
+
+		ii)
+			db.productos.find({
+					$and: [
+						{
+							price: { $lt: 3000 }
+						}, 
+						{
+							price: { $gt:1000 }
+						}
+					]
+				})
